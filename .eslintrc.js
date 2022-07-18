@@ -22,4 +22,11 @@ module.exports = {
     'max-nested-callbacks': 'off',
     'no-console': 'warn',
   },
+  settings: {
+    // 'import/resolver': {
+    //   node: {
+    //     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    //   },
+    // },
+  },
 }

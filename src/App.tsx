@@ -1,18 +1,26 @@
-import { useRef, useEffect } from 'react'
+import type { InitialEntry } from 'history'
+import { memo } from 'react'
+import { MemoryRouter, BrowserRouter } from 'react-router-dom'
 
-import { init, animate } from './lib/render'
+import { inClient } from '@/libs/app-jssdk'
 
-import './App.css'
+import './style.less'
+import Route from './routes'
 
-function App() {
-  const ContainerRef = useRef<HTMLDivElement>(null)
+function App({ initialEntries }: { initialEntries?: InitialEntry[] }) {
+  if (inClient) {
+    return (
+      <MemoryRouter initialEntries={initialEntries}>
+        <Route />
+      </MemoryRouter>
+    )
+  }
 
-  useEffect(() => {
-    init(ContainerRef.current as HTMLDivElement)
-    animate()
-  }, [])
-
-  return <div ref={ContainerRef} />
+  return (
+    <BrowserRouter>
+      <Route />
+    </BrowserRouter>
+  )
 }
 
-export default App
+export default memo(App)

@@ -1,18 +1,19 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
-import './index.css'
+import { ready, getInitialPathname } from '@/libs/app-jssdk'
+
 import App from './App'
-import reportWebVitals from './reportWebVitals'
 
-render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
-)
+const root = createRoot(document.getElementById('root')!)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+ready().then(() => {
+  const initialPathname = getInitialPathname()
+  const initialEntries = initialPathname ? [initialPathname] : undefined
+
+  root.render(
+    <React.StrictMode>
+      <App initialEntries={initialEntries} />
+    </React.StrictMode>,
+  )
+})

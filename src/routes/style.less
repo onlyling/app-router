@@ -1,0 +1,68 @@
+// .app-switchover-push {
+//   .app-switchover {
+//     &-enter {
+//       left: 100%;
+//       z-index: 1002;
+//       width: 100%;
+
+//       &-active {
+//         left: 0;
+//         z-index: 1002;
+//         transition: left 300ms;
+//       }
+//     }
+
+//     &-exit {}
+//   }
+// }
+
+
+.app-switchover-push {
+  .app-switchover {
+    &-enter{
+      left: 100%;
+      z-index: 1002;
+      width: 100%;
+      &-active {
+        left: 0;
+        z-index: 1002;
+        transition: left 300ms;
+      }
+    }
+
+    &-exit {
+      left: 0;
+      z-index: 1000;
+
+      &-active {
+        left: 0;
+        z-index: 1000;
+      }
+    }
+  }
+}
+
+.app-switchover-pop {
+  .app-switchover {
+    &-enter {
+      left: 0;
+      z-index: 1000;
+
+      &-active {
+        left: 0;
+        z-index: 1000;
+      }
+    }
+
+    &-exit{
+      left: 0;
+      z-index: 1001;
+      &-active {
+        left: 100%;
+        z-index: 1001;
+        width: 100%;
+        transition: left 300ms;
+      }
+    }
+  }
+}
