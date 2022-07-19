@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Page, NavBar } from '@/components/app'
+import { Page, NavBar } from '@/starbridge'
 
 const Home2: React.FC = () => {
   return (
-    <Page>
+    <Page style={{ backgroundColor: '#098' }}>
       <NavBar />
-      <p>HOME2 - 新版本 == AAAA</p>
+      <p>HOME2 - 新版本 == BBBB</p>
     </Page>
   )
 }

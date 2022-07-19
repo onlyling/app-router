@@ -6,10 +6,10 @@
   "homepage": "./",
   "dependencies": {
     "@craco/craco": "7.0.0-alpha.7",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "antd-mobile": "^5.17.2",
+    "@types/node": "^18.0.6",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "antd-mobile": "^5.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@fruits-chain/eslint-config-preset": "0.2.0",
+    "@fruits-chain/eslint-config-preset": "0.2.1",
     "@fruits-chain/prettier-config-preset": "^0.0.3",
     "@types/react-is": "^17.0.3",
     "@types/react-transition-group": "^4.4.5",

@@ -18,7 +18,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "noUnusedLocals": true
   },
   "include": ["src"]
 }

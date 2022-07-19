@@ -1,5 +1,3 @@
-import type React from 'react'
-
 import type { RouteProps, RouterConfig } from './interface'
 import Route from './route'
 import Router from './router'
@@ -7,7 +5,7 @@ import Router from './router'
 export const createRouter = <T extends Record<string, any>>() => {
   return {
     Router: Router,
-    Route: Route as (p: RouteProps<T>) => null,
+    Route: Route as unknown as (p: RouteProps<T>) => null,
     useNavigation: () => {},
     useRoute: <Params = Record<string, any>>(): Omit<
       RouterConfig<Params>,

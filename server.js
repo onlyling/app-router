@@ -16,13 +16,13 @@ app.get('/', (req, res) => {
 app.get('/api/app-version', (req, res) => {
   const appVersionCode = +(req.query.appVersionCode || -1)
 
-  console.log('appVersionCode => ', appVersionCode)
+  console.warn('appVersionCode => ', appVersionCode)
 
   res.json({
     errCode: 200,
     data:
       appVersionCode < pkgJSON.versionCode
-        ? 'http://192.168.10.140:3100/starbridge-strategy-v0.1.2.zip'
+        ? 'http://192.168.10.103:3100/starbridge-strategy-v0.1.2.zip'
         : '',
   })
 })

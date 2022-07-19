@@ -1,7 +1,9 @@
 import { NavBar as NavBarAntd } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 
-import { getSafeAreaInsets } from '@/libs/app-jssdk'
+import { getSafeAreaInsets } from '../app-jssdk'
+import { goBack } from '../app-jssdk/navigation'
+import { useRouteContext } from '../route-context'
 
 import type { NavBarProps } from './interface'
 
@@ -9,12 +11,13 @@ import type { NavBarProps } from './interface'
 const NavBar: React.FC<NavBarProps> = ({ onBack }) => {
   const insets = getSafeAreaInsets()
   const navigate = useNavigate()
+  const { hasLastPage } = useRouteContext()
 
   return (
     <div style={{ paddingTop: insets.top }}>
       <NavBarAntd
         onBack={() => {
-          onBack ? onBack() : navigate(-1)
+          onBack ? onBack() : hasLastPage() ? navigate(-1) : goBack()
         }}>
         标题
       </NavBarAntd>

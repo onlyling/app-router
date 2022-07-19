@@ -1,9 +1,9 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 
-import { ready, getInitialPathname } from '@/libs/app-jssdk'
+import { ready, getInitialPathname } from '@/starbridge/app-jssdk'
 
-import App from './App'
+import App from './app'
 
 const root = createRoot(document.getElementById('root')!)
 

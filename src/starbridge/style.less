@@ -1,22 +1,3 @@
-// .app-switchover-push {
-//   .app-switchover {
-//     &-enter {
-//       left: 100%;
-//       z-index: 1002;
-//       width: 100%;
-
-//       &-active {
-//         left: 0;
-//         z-index: 1002;
-//         transition: left 300ms;
-//       }
-//     }
-
-//     &-exit {}
-//   }
-// }
-
-
 .app-switchover-push {
   .app-switchover {
     &-enter{
@@ -65,4 +46,26 @@
       }
     }
   }
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 2500ms ease-out, transform 3000ms ease;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+
+  transition: opacity 2500ms ease-out, transform 3000ms ease;
 }
