@@ -7,13 +7,10 @@ import type { RouterProps } from './interface'
 import './style.less'
 
 const Router: React.FC<React.PropsWithChildren<RouterProps>> = ({
-  initialEntries,
   children,
 }) => {
   if (inClient) {
-    return (
-      <MemoryRouter initialEntries={initialEntries}>{children}</MemoryRouter>
-    )
+    return <MemoryRouter>{children}</MemoryRouter>
   }
 
   return <BrowserRouter>{children}</BrowserRouter>

@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const pkgJSON = require('./package.json')
 
-module.exports = function () {
+module.exports = function ({ env }) {
   // const { REACT_APP_BASE_URL, REACT_APP_API_HOST, REACT_APP_GRAPHQL_PATH } =
   //   dotenv.config({
   //     path: path.join(__dirname, `/.env.${env}`),
@@ -55,19 +55,21 @@ module.exports = function () {
       },
       plugins: {
         add: [
-          new FileManagerPlugin({
-            events: {
-              onEnd: {
-                archive: [
-                  {
-                    source: './build',
-                    destination: `./zips/${pkgJSON.name}-v${pkgJSON.version}.zip`,
+          env === 'production'
+            ? new FileManagerPlugin({
+                events: {
+                  onEnd: {
+                    archive: [
+                      {
+                        source: './build',
+                        destination: `./zips/${pkgJSON.name}-v${pkgJSON.version}.zip`,
+                      },
+                    ],
                   },
-                ],
-              },
-            },
-          }),
-        ],
+                },
+              })
+            : undefined,
+        ].filter(Boolean),
       },
       configure: webpackConfig => {
         const htmlWebpackPluginInstance = webpackConfig.plugins.find(

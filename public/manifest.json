@@ -1,0 +1,25 @@
+{
+  "short_name": "测试 Light",
+  "name": "啊哈。",
+  "icons": [
+    {
+      "src": "favicon_xc.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_xc_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon_xc_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0065FE",
+  "background_color": "#ffffff"
+}
